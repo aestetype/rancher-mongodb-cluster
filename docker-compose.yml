@@ -22,7 +22,7 @@ services:
       io.rancher.container.hostname_override: container_name
       io.rancher.container.start_once: 'true'
     build: ./mongodb-config
-    image: zadki3l/rancher-mongodb-config:v0.2.0
+    image: aestetype/rancher-mongodb-config
     stdin_open: true
     entrypoint: /bin/true
   mongo-datavolume:
