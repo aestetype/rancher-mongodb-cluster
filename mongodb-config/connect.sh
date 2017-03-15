@@ -34,8 +34,8 @@ function find_master {
 $GIDDYUP service wait scale --timeout 120
 
 # Wait until all services are up
-sleep 10
-find_master
+while ! mongo --eval "db.version()" > /dev/null 2>&1; do sleep 0.1; done
+
 if [ $? -eq 0 ]; then
 	echo 'Master is already initated.. nothing to do!'
 else

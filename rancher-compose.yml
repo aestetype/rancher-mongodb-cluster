@@ -1,2 +1,22 @@
-mongo-cluster:
-  scale: 3
+version: '2'
+services:
+  mongo-datavolume:
+    metadata:
+      mongo: &id001
+        yml:
+          replset.name: rs0
+    retain_ip: true
+    scale: 3
+    start_on_create: true
+  mongo-cluster:
+    metadata:
+      mongo: *id001
+    retain_ip: true
+    scale: 3
+    start_on_create: true
+  mongo-base:
+    metadata:
+      mongo: *id001
+    retain_ip: true
+    scale: 3
+    start_on_create: true
