@@ -1,8 +1,8 @@
-FROM alpine:3.1
-MAINTAINER Hussein Galal
+FROM alpine:3.5
+MAINTAINER Aestetype
 
 # install giddyup
-RUN apk add -U curl \
+RUN apk add --update --no-cache curl \
     && mkdir -p /opt/rancher/bin \
     && curl -L https://github.com/aslafy-z/giddyup/releases/download/container-names/giddyup -o /opt/rancher/bin/giddyup \
     && chmod u+x /opt/rancher/bin/*
