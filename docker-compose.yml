@@ -9,7 +9,7 @@ services:
     command:
     - --replSet
     - "rs0"
-    image: mongo:3.0
+    image: mongo:6.0
     labels:
       io.rancher.container.hostname_override: container_name
       io.rancher.sidekicks: mongo-base, mongo-datavolume
